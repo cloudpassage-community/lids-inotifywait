@@ -14,15 +14,17 @@ Pre-requisites
 Command Example
 -
 
-sudo inotifywait -d -e modify,move_self -o /var/g/inotify_log /home/ec2-user/ /etc/test_config
+sudo inotifywait -d -e modify,move_self -o /var/log/inotify_log /home/ec2-user/ /etc/test_config
 
--d run in background as a daemon
+-d run in background as a daemon  
 -e events (a full list of events that can be monitored are at [https://linux.die.net/man/1/inotifywait])  In this
 we are monitoring for modifications and self moves (caused by vi for example when a file is moved temporarily before
-being written causing inotify to stop monitoring it)
+being written causing inotify to stop monitoring it)  
 -o log to file
 
-directories or files to monitor
+directories or files to monitor.  In this example we are watching the directory /home/ec2-user/ and the file 
+/etc/test_config  
+
 
 Events
 -
